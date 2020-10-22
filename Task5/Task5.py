@@ -67,21 +67,14 @@ print("Answers written to file Task5.4_answ.txt")
 # Программа должна подсчитывать сумму чисел в файле и выводить ее на экран.
 
 filepath = r"C:\Users\sergei.novikov\Desktop\Study\BasicGit\basics_py\Task5\Task5.5.txt"
-
 with open(filepath, "w") as task5_6:
     numbers_str = input("Enter numbers: ")
     task5_6.write(numbers_str)
 with open(filepath, "r") as readnumbers:
     sum_numbers = 0
     for num in readnumbers:
-        number_list = num.split()
-        try:
-            for number in number_list:
-                number = int(number)
-                sum_numbers += number
-        except ValueError:
-            print("Error! There are letters in the file!")
-    print(f"Sum of numbers in file: {sum_numbers}")
+        number_sum = sum(map(int, "".join([i for i in num if i == " " or i.isdigit()]).split()))
+    print(f"Sum of numbers in file: {number_sum}")
 
 # 6. Необходимо создать (не программно) текстовый файл,
 # где каждая строка описывает учебный предмет и наличие лекционных,
