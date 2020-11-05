@@ -1,0 +1,23 @@
+invalid literal for int() with base 10: '12sgs'
+Array length doesn't match
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+list index out of range
+
+
+
+
+
+
